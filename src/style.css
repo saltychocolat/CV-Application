@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com//css2?family=Comfortaa:wght@300');
+
+html{
+    background-color: #F3F4F6;
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+}
+
+
+/* APP CSS */
+.wrapper{
+    display: flex;
+    padding: 10px;
+}
+.LeftContainer{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.RightContainer{
+    width:900px ;
+    height: 1000px;
+    background-color: white;
+}
+
+.PersonalDetailsContainer{
+    background-color: #0E374E;
+    width: auto;
+    height: 100px;
+    color: white;
+}
+
+
+
+
+/* SECTION CSS */
+.sectionHeader{
+    font-weight: bolder;
+    margin-bottom: 0px;
+}
+.sectionContainer{
+    display: flex;
+    flex-direction: column  ;
+
+    padding: 18px;
+    border-radius: 5px;
+    background-color:white;
+    margin-bottom: 20px;
+    width: 250px;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.inputContainer.open{
+    max-height: 500px;
+}
+
+/* INPUT FIELD CSS */
+input{
+    border-radius: 6px;
+    background-color: #F3F4F6;
+    font-size: 10px;
+    padding: 4px;
+    border: 1px solid black ;
+    margin-top: 5px;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #3B83F6;
+}
+label{
+    font-size: 12px;
+    margin-top: 10px;
+}
