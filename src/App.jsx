@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Section } from "./Section"
+import { CVHeader } from "./cvHeader"
 
 let inputList = [["Full Name","MIhai Mihai","text"],["Email","mihai@gmail.com","email"],["Phone Number","0712331","number"],["Adress","New York","adress"]]
 function App(){
@@ -19,10 +20,7 @@ function App(){
                 <Section sectionName="Personal Details" callback={handleInput} inputList={inputList}/>
             </div>
             <div className="RightContainer">
-                <div className="PersonalDetailsContainer">
-                    {console.log(PersonalDetails)}
-                    {PersonalDetails.fullname}
-                </div>
+                <CVHeader person={PersonalDetails} />
             </div>
 
         </div>
