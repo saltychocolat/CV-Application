@@ -7,7 +7,6 @@ html{
     zoom: 150%;
 }
 
-
 /* APP CSS */
 .wrapper{
     display: flex;
@@ -56,10 +55,7 @@ html{
 
 
 /* SECTION CSS */
-.sectionHeader{
-    font-weight: bolder;
-    margin-bottom: 0px;
-}
+
 .sectionContainer{
     display: flex;
     flex-direction: column  ;
@@ -70,19 +66,113 @@ html{
     margin-bottom: 20px;
     width: 300px;
 }
+
+.sectionButton{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    align-self: flex-start;
+    font-weight: 700;
+    background-color: white;
+    border: 0px;
+}
+
+.sectionContainer img{
+    transition: transform 0.2s ease-in-out;
+    margin-left: auto;
+    height: 10px;
+}
+
+.rotate{
+    transform:rotate(180deg);
+}
+
 .inputContainer{
+    position: relative;
     display: flex;
     flex-direction: column;
     
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .inputContainer.open{
+    margin-top: 20px;
     max-height: 500px;
+    overflow: visible;
 }
 
+/* FORM CSS */
+
+.form{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.form.open{
+    padding: 0px 18px;
+    margin-left: -18px;
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+}
+.formButton{
+    font-size: 10px;
+    background-color: white;
+    padding: 6px 15px;
+    border: 2px gray solid;
+    border-radius: 20px;
+    align-self: center ;
+}
+.formFooter{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.formDelete,
+.formCancel,
+.formSave{
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 6px 12px;
+    background-color: white;
+}
+.formDelete{
+    margin-right: auto;
+}
+.formCancel{
+    margin-right: 10px;
+}
+.formSave{
+    background-color: #187FF5;
+    color: white;
+    border:#187FF5;
+}
+.itemButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 0;
+    padding: 8px 10px;
+
+}
+
+
 /* INPUT FIELD CSS */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #F3F4F6 inset !important;
+}
+
 input{
     border-radius: 6px;
     background-color: #F3F4F6;
@@ -97,8 +187,10 @@ input{
 input:focus{
     outline: none;
     border: 1.5px solid #3B83F6;
+
 }
 label{
+    font-weight: 650;
     font-size: 12px;
     margin-top: 10px;
 }
