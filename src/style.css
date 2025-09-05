@@ -60,7 +60,7 @@ html{
     display: flex;
     flex-direction: column  ;
 
-    padding: 18px;
+    padding: 20px;
     border-radius: 5px;
     background-color:white;
     margin-bottom: 20px;
@@ -114,7 +114,7 @@ html{
 .form.open{
     padding: 0px 18px;
     margin-left: -18px;
-    width: 300px;
+    width: 302px;
     position: absolute;
     background-color: white;
     border-radius: 5px;
@@ -163,7 +163,10 @@ html{
     padding: 8px 10px;
 
 }
-
+.dateDiv{
+    display: flex;
+    gap: 35px;
+}
 
 /* INPUT FIELD CSS */
 input:-webkit-autofill,
@@ -173,6 +176,10 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px #F3F4F6 inset !important;
 }
 
+.inputPair{
+    display: flex;
+    flex-direction: column;
+}
 input{
     border-radius: 6px;
     background-color: #F3F4F6;

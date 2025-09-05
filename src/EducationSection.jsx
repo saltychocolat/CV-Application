@@ -1,30 +1,61 @@
 import { useState } from "react";
-import { InputField } from "./InputField";
 import { Form } from "./form";
 
-function EducationSection({sectionName,inputList}){
-    const [isOpen,setOpen] =useState(false)
-    const [list,setList] = useState([{"School":"abc","Degree":"no","Location":"Braila"},{"School":"abc","Degree":"no","Location":"Braila"}])
-    const handleClick = () => {
-    setOpen((prev) => !prev); 
+function EducationSection({ sectionName, inputList, list, setList }) {
+    const [nextID, setNextID] = useState(2);
+    const [isSectionOpen, setSectionOpen] = useState(false);
+
+    const toggleSection = () => {
+        setSectionOpen(prev => !prev);
+    }
+
+    const handleDeleteItem = (id) => {
+        setList(prevList => prevList.filter(item => item.ID !== id));
     };
 
-    return(
+    const handleSaveItem = (updatedItem) => {
+        setList(prev =>
+            prev.map(item => (item.ID === updatedItem.ID ? updatedItem : item))
+        );
+    };
+
+
+    const handleNewItem = () =>{
+        let newItem ={
+        "School":"",
+        "Degree":"",
+        "Location":"",
+        "Start Date":"20",
+        "End Date" :"21",
+        "ID":nextID,
+        "isNew" :true,
+        }
+        setList(prev => [...prev,newItem])
+        setNextID(prev => prev+1)
+    }
+
+    return (
         <div className="sectionContainer" id="educationContainer">
-            <button className="sectionButton" onClick={handleClick} >
+            <button className="sectionButton" onClick={toggleSection}>
                 <div>{sectionName}</div>
-                <img src="src\assets\buttonIcon.png" className={isOpen ? "rotate" : ""}></img>
+                <img src="src/assets/buttonIcon.png" className={isSectionOpen ? "rotate" : ""} />
             </button>
-            <div className={`inputContainer ${isOpen ? "open" : ""}`} id="inputEducation">
-                {
-                    list.map((item,index)=>(
-                        <Form inputList={inputList} item={item} key={index} />
-                    ))
-                }
-                <button className="formButton" >+ Education</button>
+
+            <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputEducation">
+                {list.map(item => (
+                    <Form
+                    key={item.ID}
+                    inputList={inputList}
+                    item={item}
+                    deleteItem={() => handleDeleteItem(item.ID)}
+                    saveItem={handleSaveItem} 
+                    />
+                ))}
+
+                <button className="formButton" onClick={handleNewItem}>+ Education</button>
             </div>
         </div>
-    )
-    
+    );
 }
-export {EducationSection}
+
+export { EducationSection };

@@ -1,13 +1,13 @@
 import "./style.css"
 
-function InputField({label,placeholder,type,callback,value}){
+function InputField({label,placeholder,type,onChange,value}){
 
     return(
-        <>
+        <div className="inputPair">
             <label>{label}
             </label>
-            <input  placeholder={placeholder} type={type} onChange={callback} defaultValue={value}></input>
-        </>
+            <input  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></input>
+        </div>
 
 
     )
