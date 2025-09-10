@@ -1,8 +1,8 @@
 import "./style.css"
 
-function CVHeader({person}){
+function CVDetails({person}){
     return(
-        <div className="CVHeaderContainer">
+        <div className="CVDetailsContainer">
             <div className="nameContainer">
                 {person.fullname}
             </div>
@@ -23,4 +23,4 @@ function CVHeader({person}){
 }
 
 
-export {CVHeader}
+export {CVDetails}

@@ -30,8 +30,8 @@ function Form({ inputList, item,deleteItem,saveItem }) {
     <div className={`form ${isExpanded ? "open" : "collapsed"}`}>
         {!isExpanded ? (
         <button className="itemButton" onClick={() => setIsExpanded(true)}>
-            <div>{item.School || "New Entry"}</div>
-            <img src="src/assets/eyeIcon.png" alt="expand" />
+            <div>{item["Company Name"] || item.School|| ""}</div>
+            <img src="src/assets/eyeIcon.png" alt="expand" className="eye" />
         </button>
         ) : (
         <>
@@ -52,8 +52,8 @@ function Form({ inputList, item,deleteItem,saveItem }) {
                             label={"End Date"}
                             placeholder={"Enter End Date"}
                             type={type}
-                            value={draftData[label] || ""}
-                            onChange={(e) => handleInputChange(label, e.target.value)}
+                            value={draftData["End Date"] || ""}
+                            onChange={(e) => handleInputChange("End Date", e.target.value)}
                         />
                     </div>
                 )

@@ -6,7 +6,11 @@ function InputField({label,placeholder,type,onChange,value}){
         <div className="inputPair">
             <label>{label}
             </label>
-            <input  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></input>
+            {label=="Description"?(
+                <textarea  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></textarea>
+            ):(
+                <input  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></input>
+            )}
         </div>
 
 

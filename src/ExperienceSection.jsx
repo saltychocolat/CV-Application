@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form } from "./form";
 
-function EducationSection({ sectionName, inputList, list, setList }) {
+function ExperienceSection({ sectionName, inputList, list, setList }) {
     const [nextID, setNextID] = useState(2);
     const [isSectionOpen, setSectionOpen] = useState(false);
 
@@ -28,6 +28,7 @@ function EducationSection({ sectionName, inputList, list, setList }) {
         "Location":"",
         "Start Date":"",
         "End Date" :"",
+        "Description":"",
         "ID":nextID,
         "isNew" :true,
         }
@@ -36,14 +37,14 @@ function EducationSection({ sectionName, inputList, list, setList }) {
     }
 
     return (
-        <div className="sectionContainer" id="educationContainer">
+        <div className="sectionContainer" id="experienceContainer">
             <button className="sectionButton" onClick={toggleSection}>
-                <img src="src/assets/educationIcon.png" className="icon"/>
+                <img src="src/assets/workIcon.png" className="icon"/>
                 <div>{sectionName}</div>
                 <img src="src/assets/buttonIcon.png" className={isSectionOpen ? "arrow rotate" : "arrow"} />
             </button>
 
-            <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputEducation">
+            <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputExperience">
                 {list.map(item => (
                     <Form
                     key={item.ID}
@@ -54,10 +55,10 @@ function EducationSection({ sectionName, inputList, list, setList }) {
                     />
                 ))}
 
-                <button className="formButton" onClick={handleNewItem}>+ Education</button>
+                <button className="formButton" onClick={handleNewItem}>+ Experience</button>
             </div>
         </div>
     );
 }
 
-export { EducationSection };
+export { ExperienceSection };
