@@ -1,4 +1,4 @@
-import "./style.css"
+import "../style.css"
 
 function InputField({label,placeholder,type,onChange,value}){
 

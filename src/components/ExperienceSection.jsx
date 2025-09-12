@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form } from "./form";
+import { Form } from "./Form";
 
 function ExperienceSection({ sectionName, inputList, list, setList }) {
     const [nextID, setNextID] = useState(2);
@@ -23,8 +23,8 @@ function ExperienceSection({ sectionName, inputList, list, setList }) {
 
     const handleNewItem = () =>{
         let newItem ={
-        "School":"",
-        "Degree":"",
+        "Company Name":"",
+        "Position Title":"",
         "Location":"",
         "Start Date":"",
         "End Date" :"",

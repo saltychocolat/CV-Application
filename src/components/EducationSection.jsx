@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Form } from "./form";
-
+import { Form } from "./Form"
 function EducationSection({ sectionName, inputList, list, setList }) {
     const [nextID, setNextID] = useState(2);
     const [isSectionOpen, setSectionOpen] = useState(false);
