@@ -4,7 +4,7 @@ import { ExperienceInfo } from "./ExperienceInfo"
 function CVExperience({experience}){
     return(
         <div className="CVExperienceContainer">
-            {experience ?(
+            {experience.length != 0 ?(
                 <div className="header">Experience</div>
             ):(
                 <></>

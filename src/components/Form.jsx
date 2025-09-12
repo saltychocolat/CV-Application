@@ -74,7 +74,10 @@ function Form({ inputList, item,deleteItem,saveItem }) {
 
             })}
             <div className="formFooter">
-                <button className="formDelete" onClick={deleteItem}>Delete</button>
+                <button className="formDelete" onClick={deleteItem}>
+                    <img className="trashIcon" src="src\assets\deleteIcon.png"></img>
+                    <div>Delete</div>
+                </button>
                 <button className="formCancel" onClick={handleCancelClick}>Cancel</button>
                 <button className="formSave" onClick={handleSaveClick}>Save</button>
             </div>

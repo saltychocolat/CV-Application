@@ -24,6 +24,8 @@ html{
 }
 
 
+
+
 /* CVHEADER CSS */
 .CVDetailsContainer{
     display: flex;
@@ -92,6 +94,52 @@ html{
     padding: 20px 40px 0px;
 }
 
+/* HEADER CSS */
+.headerContainer{
+    top:0;
+    position: sticky;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 25px;
+    margin-bottom: 20px;
+    padding: 7px;
+    border-radius: 10px;
+}
+.clearResume{
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 10px;
+    font-weight:bold;
+    border-radius: 5px;
+    color: #B91C1C;
+    background-color: white;
+    border: 0px;
+}
+.loadExemple{
+    padding: 0px;
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    border: 0px;
+    font-size: 10px;
+    font-weight:bold;
+    border-radius: 5px;
+}
+.trashIcon{
+    height: 11px;
+    margin-right: 5px;
+    margin-left: -5px;
+}
+
 /* SECTION CSS */
 
 .sectionContainer{
@@ -108,7 +156,7 @@ html{
 .icon{
     margin-left: 0px;
     margin-right: 10px;
-    height: 20px;
+    height: 17px;
 }
 .eye{
     margin-left: auto;
@@ -131,7 +179,7 @@ html{
 .sectionContainer .arrow{
     transition: transform 0.2s ease-in-out;
     margin-left: auto;
-    height: 10px;
+    height: 8px;
 }
 
 .rotate{
@@ -194,11 +242,13 @@ html{
     align-self: center ;
     margin-top: 20px;
 }
+
 .formFooter{
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .formDelete,
 .formCancel,
 .formSave{
@@ -208,19 +258,25 @@ html{
     padding: 6px 12px;
     background-color: white;
 }
+
 .formDelete{
     margin-right: auto;
+    display: flex;
 }
+
 .formCancel{
     margin-right: 10px;
 }
+
 .formSave{
     background-color: #187FF5;
     color: white;
     border:#187FF5;
 }
+
 .itemButton{
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
     background-color: white;
     left: -16px;
     position: relative;
@@ -236,6 +292,7 @@ html{
     padding: 15px 10px;
 
 }
+
 .dateDiv{
     display: flex;
     gap: 35px;
@@ -256,7 +313,7 @@ input:-webkit-autofill:active{
 input,textarea{
     border-radius: 6px;
     background-color: #F3F4F6;
-    font-size: 10px;
+    font-size:9px;
     padding: 4px;
     border: 1.5px solid #F3F4F6 ;
     margin-top: 5px;
@@ -271,6 +328,6 @@ input:focus , textarea:focus{
 }
 label{
     font-weight: 650;
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 10px;
 }

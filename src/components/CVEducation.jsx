@@ -1,10 +1,9 @@
 
 import { EducationInfo } from "./EducationInfo"
 function CVEducation({education}){
-
     return(
         <div className="CVEducationContainer">
-            {education ?(
+            {education.length !=0 ?(
                 <div className="header">Education</div>
             ):(
                 <>
