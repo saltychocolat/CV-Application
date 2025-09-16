@@ -7,13 +7,13 @@ function CVDetails({person}){
                 {person["Full Name"]}
             </div>
             <div className="smallContainer">
-                {person["Email"] !="" ? (<img src="src\assets\emailIcon.png"></img>) :(<></>)}
+                {person["Email"] !="" ? (<img src="/assets/emailIcon.png"></img>) :(<></>)}
                 <div>{person["Email"]}</div>
 
-                {person["Phone Number"] !="" ? (<img src="src\assets\phoneIcon.png"></img>) :(<></>)}
+                {person["Phone Number"] !="" ? (<img src="/assets/phoneIcon.png"></img>) :(<></>)}
                 <div>{person["Phone Number"]}</div>
 
-                {person["Adress"] !="" ? (<img src="src\assets\adressIcon.png"></img>) :(<></>)}
+                {person["Adress"] !="" ? (<img src="/assets/adressIcon.png"></img>) :(<></>)}
                 <div>{person["Adress"]}</div>
             </div>
         </div>

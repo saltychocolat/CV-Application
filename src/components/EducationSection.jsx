@@ -37,9 +37,9 @@ function EducationSection({ sectionName, inputList, list, setList }) {
     return (
         <div className="sectionContainer" id="educationContainer">
             <button className="sectionButton" onClick={toggleSection}>
-                <img src="src/assets/educationIcon.png" className="icon"/>
+                <img src="assets/educationIcon.png" className="icon"/>
                 <div>{sectionName}</div>
-                <img src="src/assets/buttonIcon.png" className={isSectionOpen ? "arrow rotate" : "arrow"} />
+                <img src="assets/buttonIcon.png" className={isSectionOpen ? "arrow rotate" : "arrow"} />
             </button>
 
             <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputEducation">

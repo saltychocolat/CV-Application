@@ -31,7 +31,7 @@ function Form({ inputList, item,deleteItem,saveItem }) {
         {!isExpanded ? (
         <button className="itemButton" onClick={() => setIsExpanded(true)}>
             <div>{item["Company Name"] || item.School|| ""}</div>
-            <img src="src/assets/eyeIcon.png" alt="expand" className="eye" />
+            <img src="assets/eyeIcon.png" alt="expand" className="eye" />
         </button>
         ) : (
         <>
@@ -75,7 +75,7 @@ function Form({ inputList, item,deleteItem,saveItem }) {
             })}
             <div className="formFooter">
                 <button className="formDelete" onClick={deleteItem}>
-                    <img className="trashIcon" src="src\assets\deleteIcon.png"></img>
+                    <img className="trashIcon" src="/assets/deleteIcon.png"></img>
                     <div>Delete</div>
                 </button>
                 <button className="formCancel" onClick={handleCancelClick}>Cancel</button>

@@ -10,9 +10,9 @@ function DetailsSection({sectionName,inputList,handlePersonalInput,person}){
     return(
         <div className="sectionContainer" id="detailsContainer">
             <button className="sectionButton" onClick={toggleSection}>
-                <img src="src/assets/personIcon.png" className="icon"/>
+                <img src="/assets/personIcon.png" className="icon"/>
                 <div>{sectionName}</div>
-                <img src="src/assets/buttonIcon.png" className={isSectionOpen ? "arrow rotate" : "arrow"} />
+                <img src="/assets/buttonIcon.png" className={isSectionOpen ? "arrow rotate" : "arrow"} />
             </button>
             <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputDetails">
             {   
