@@ -252,7 +252,6 @@ button{
 }
 
 .inputContainer{
-    position: relative;
     display: flex;
     flex-direction: column;
     visibility: hidden;
@@ -334,7 +333,6 @@ button{
     padding: 0px 18px;
     margin-left: -16px;
     width: 296px;
-    position: absolute;
     background-color: white;
     border-radius: 5px;
 }

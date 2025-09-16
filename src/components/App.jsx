@@ -21,7 +21,7 @@ let inputExperienceLIst = [["Company Name","Enter Company Name","text"],["Positi
 function App(){
     const [SidebarState,setSidebar] = useState(0)
     const [PersonalDetails,setPersonal] = useState({"Full Name":"Cusai Rares Constantin","Email":"rarescusai@gmail.com","Phone Number":"0771231238","Adress":"Braila,Romania"})
-    const [EducationDetails,setEducation] = useState([{"School":"London City University","Degree":"Bachelors in Economics","Start Date":"08/2020","End Date":"present","Location":"New York City, US",ID:0,isNew:false}])
+    const [EducationDetails,setEducation] = useState([{"School":"London City University","Degree":"Bachelors in Economics","Start Date":"08/2020","End Date":"present","Location":"New York City, US",ID:0,isNew:false,expanded:false}])
     const [ExperienceDetails,setExperience] = useState([{"Company Name":"Umbrella Inc.","Position Title":"UX & UI Designer","Start Date":"08/2020","End Date":"present","Location":"New York City, US","Description":"Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",ID:0,isNew:false}])
 
 
@@ -41,7 +41,7 @@ function App(){
     const loadExemple = ()=>{
         setPersonal({"Full Name":"Cusai Rares Constantin","Email":"rarescusai@gmail.com","Phone Number":"0771231238","Adress":"Braila,Romania"})
         setEducation([{"School":"London City University","Degree":"Bachelors in Economics","Start Date":"08/2020","End Date":"present","Location":"New York City, US",ID:0,isNew:false}])
-        setExperience([{"Company Name":"Umbrella Inc.","Position Title":"UX & UI Designer","Start Date":"08/2020","End Date":"present","Location":"New York City, US","Description":"Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",ID:0,isNew:false}])
+        setExperience([{"Company Name":"Umbrella Inc.","Position Title":"UX & UI Designer","Start Date":"08/2020","End Date":"present","Location":"New York City, US","Description":"Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",ID:0,isNew:false,expanded:false}])
     }
     
     const clearResume = () =>{

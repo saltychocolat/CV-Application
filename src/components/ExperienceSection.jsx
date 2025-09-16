@@ -19,6 +19,14 @@ function ExperienceSection({ sectionName, inputList, list, setList }) {
             return prev.map(item => (item.ID === updatedItem.ID ? updatedItem : item))}
         );
     };
+    function toggleExpanded(id) {
+        setList(prevList =>
+                prevList.map(item => ({
+                ...item,
+                expanded: item.ID === id ? !item.expanded : false // only one expanded
+            }))
+        );
+    }
 
 
     const handleNewItem = () =>{
@@ -31,10 +39,14 @@ function ExperienceSection({ sectionName, inputList, list, setList }) {
         "Description":"",
         "ID":nextID,
         "isNew" :true,
+        "expanded":true,
         }
         setList(prev => [...prev,newItem])
         setNextID(prev => prev+1)
     }
+
+    const expandedItem = list.find(item => item.expanded);
+    const itemsToRender = expandedItem ? [expandedItem] : list;
 
     return (
         <div className="sectionContainer" id="experienceContainer">
@@ -45,17 +57,23 @@ function ExperienceSection({ sectionName, inputList, list, setList }) {
             </button>
 
             <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputExperience">
-                {list.map(item => (
+                {itemsToRender.map(item => (
                     <Form
                     key={item.ID}
                     inputList={inputList}
                     item={item}
                     deleteItem={() => handleDeleteItem(item.ID)}
                     saveItem={handleSaveItem} 
+                    toggleExpanded={toggleExpanded}
                     />
                 ))}
 
-                <button className="formButton" onClick={handleNewItem}>+ Experience</button>
+                {!expandedItem ?(
+                    <button className="formButton" onClick={handleNewItem}>+ Experience</button>
+                ):
+                (
+                    <></>
+                )}
             </div>
         </div>
     );

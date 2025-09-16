@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { InputField } from "./InputField";
 
-function Form({ inputList, item,deleteItem,saveItem }) {
-    const [isExpanded, setIsExpanded] = useState(item.isNew);
+function Form({ inputList, item,deleteItem,saveItem ,toggleExpanded}) {
     const [draftData, setDraftData] = useState(item || {});
 
     // Update draft when an input changes
@@ -14,22 +13,22 @@ function Form({ inputList, item,deleteItem,saveItem }) {
     const handleCancelClick = () => {
         if(item.isNew){
             deleteItem(item.ID)
-            setIsExpanded(false)
+            toggleExpanded(item.id)
         }
         setDraftData(item);
-        setIsExpanded(false);
+        toggleExpanded(item.id)
     };
 
     // Save draft and collapse
     const handleSaveClick = () => {
         saveItem(draftData);
-        setIsExpanded(false);
+        toggleExpanded(item.id)
     };
 
     return (
-    <div className={`form ${isExpanded ? "open" : "collapsed"}`}>
-        {!isExpanded ? (
-        <button className="itemButton" onClick={() => setIsExpanded(true)}>
+    <div className={`form ${item.expanded ? "open" : "collapsed"}`}>
+        {!item.expanded ? (
+        <button className="itemButton" onClick={() => toggleExpanded(item.ID)}>
             <div>{item["Company Name"] || item.School|| ""}</div>
             <img src="assets/eyeIcon.png" alt="expand" className="eye" />
         </button>
