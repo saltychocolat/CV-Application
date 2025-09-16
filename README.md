@@ -2,6 +2,7 @@
 link:https://netlify-cv-app.netlify.app/
 
 CV Application – React
+
 A personal project to deepen my understanding of React fundamentals and strengthen a React-first mindset. Built with component-driven architecture, it lets users create, edit, and delete CV entries, with state managed using React hooks.
 Deployed on Netlify.
 
