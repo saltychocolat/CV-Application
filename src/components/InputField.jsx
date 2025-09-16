@@ -4,12 +4,12 @@ function InputField({label,placeholder,type,onChange,value}){
 
     return(
         <div className="inputPair">
-            <label>{label}
+            <label className="InputFieldLabel">{label}
             </label>
             {label=="Description"?(
-                <textarea  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></textarea>
+                <textarea className="InputFieldTextArea" placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></textarea>
             ):(
-                <input  placeholder={placeholder} type={type} onChange={onChange} defaultValue={value}></input>
+                <input className="InputFieldText" placeholder={placeholder} type={type} onChange={onChange} value={value}></input>
             )}
         </div>
 

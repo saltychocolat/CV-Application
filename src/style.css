@@ -1,23 +1,34 @@
 @import url('https://fonts.googleapis.com//css2?family=Comfortaa:wght@300');
 
+:root{
+    --accent-color:#0E374E;
+    --font-family:"Noto Sans", sans-serif;
+}
 html{
     background-color: #F3F4F6;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--font-family);
     font-style: normal;
     zoom: 150%;
 }
-
+button{
+    border: 0;
+    padding: 0;
+}
 /* APP CSS */
 .wrapper{
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr 6fr;
     padding: 10px;
 }
 .LeftContainer{
-    margin-left: 80px;
+    grid-column: 2/3;
+    margin-left: 15px;
     margin-right: 20px;
 }
 .RightContainer{
-    width:900px ;
+    grid-column: 3/4;
+    width:500px ;
     min-height: 600px;
     max-height: fit-content;
     background-color: white;
@@ -33,7 +44,7 @@ html{
     align-items: center;
 
     padding: 30px;
-    background-color: #0E374E;
+    background-color: var(--accent-color);
     width: auto;
     height: 60px;
     color: white;
@@ -65,7 +76,7 @@ html{
     padding: 4px;
     font-size: 14px;
     font-weight: 700;
-    color: #0E374E;
+    color: var(--accent-color);
     background-color: #EEF1F3;
 }
 .info{
@@ -96,6 +107,7 @@ html{
 
 /* HEADER CSS */
 .headerContainer{
+    width: 318px;
     top:0;
     position: sticky;
     z-index: 2;
@@ -106,6 +118,10 @@ html{
     margin-bottom: 20px;
     padding: 7px;
     border-radius: 10px;
+}
+.clearResume,
+.loadExemple{
+    transition: transform 0.2s ease-in-out;
 }
 .clearResume{
     padding: 0px;
@@ -134,11 +150,60 @@ html{
     font-weight:bold;
     border-radius: 5px;
 }
+.clearResume:active,
+.loadExemple:active{
+    transform: scale(0.9);
+}
 .trashIcon{
     height: 11px;
     margin-right: 5px;
     margin-left: -5px;
 }
+
+/* SIDEBAR CSS */
+.sidebarContainer{
+    grid-column: 1/2;
+    background-color: white;
+    width: 60px;
+    height: fit-content;
+    padding: 12px 6px;
+    border-radius: 10px;
+    gap: 15px;
+}
+.sidebarContainer,
+.contentButton,
+.customizeButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contentButton,
+.customizeButton{
+    transition: transform 0.2s ease-in-out;
+    padding: 5px;
+    width: 100%;
+    border-radius: 6px;
+    border: 0;
+    background-color: inherit;
+}
+.contentButton:active,
+.customizeButton:active{
+    transform: scale(0.9);
+}
+.contentButton.open,
+.customizeButton.open{
+    background-color: #F0F0F0;
+}
+.sidebarContainer > * > div {
+    font-size: 11px;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+.sidebarImg{
+    height: 12px;
+    margin-bottom: 10px;
+}
+
 
 /* SECTION CSS */
 
@@ -214,7 +279,48 @@ html{
 #inputExperience.inputContainer.open {
     margin-top: 20px;
 }
-
+.customizeContainer{
+    gap: 10px;
+    padding: 10px 0px 7px;
+    display: flex;
+    align-items: center;
+}
+.customizeHeader{
+    font-size: 15px;
+    font-weight: bold
+}
+.fontButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 7px ;
+}
+#Serif{
+    font-family: serif;
+}
+#Sans{
+    font-family: sans-serif;
+}
+#Mono{
+    font-family: monospace;
+}
+.fontBig{
+    font-size: 16px;
+}
+.fontSmall{
+    font-size: 12px;
+}
+.fontButton > *{
+    font-style: inherit;
+}
+.current{
+    background-color: var(--accent-color);
+    color: white;
+}
 /* FORM CSS */
 
 .form{
@@ -310,7 +416,7 @@ input:-webkit-autofill:active{
     display: flex;
     flex-direction: column;
 }
-input,textarea{
+.InputFieldText,.InputFieldTextArea{
     border-radius: 6px;
     background-color: #F3F4F6;
     font-size:9px;
@@ -321,13 +427,38 @@ input,textarea{
     transition: border 0.5s ease-in-out;
 
 }
-input:focus , textarea:focus{
+.InputFieldText:focus , .InputFieldTextArea:focus{
     outline: none;
     border: 1.5px solid #3B83F6;
 
 }
-label{
+.InputFieldLabel    {
     font-weight: 650;
     font-size: 11px;
     margin-top: 10px;
+}
+
+
+.colorPicker:focus{
+    outline: none;
+    border: 0;
+}
+
+.colorPickerInput {
+  position: absolute;
+  opacity: 0;
+}
+
+.colorPickerLabel {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+p{
+    font-size: 12px;
+    margin-right: 10px;
 }

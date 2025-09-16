@@ -4,17 +4,17 @@ function CVDetails({person}){
     return(
         <div className="CVDetailsContainer">
             <div className="nameContainer">
-                {person.fullname}
+                {person["Full Name"]}
             </div>
             <div className="smallContainer">
-                {person.email !="" ? (<img src="src\assets\emailIcon.png"></img>) :(<></>)}
-                <div>{person.email}</div>
+                {person["Email"] !="" ? (<img src="src\assets\emailIcon.png"></img>) :(<></>)}
+                <div>{person["Email"]}</div>
 
-                {person.phone !="" ? (<img src="src\assets\phoneIcon.png"></img>) :(<></>)}
-                <div>{person.phone}</div>
+                {person["Phone Number"] !="" ? (<img src="src\assets\phoneIcon.png"></img>) :(<></>)}
+                <div>{person["Phone Number"]}</div>
 
-                {person.adress !="" ? (<img src="src\assets\adressIcon.png"></img>) :(<></>)}
-                <div>{person.adress}</div>
+                {person["Adress"] !="" ? (<img src="src\assets\adressIcon.png"></img>) :(<></>)}
+                <div>{person["Adress"]}</div>
             </div>
         </div>
 

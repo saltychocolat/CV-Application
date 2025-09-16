@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputField } from "./InputField";
 
-function DetailsSection({sectionName,inputList,handlePersonalInput}){
+function DetailsSection({sectionName,inputList,handlePersonalInput,person}){
     const [isSectionOpen, setSectionOpen] = useState(true);
     const toggleSection = () => {
         setSectionOpen(prev => !prev);
@@ -17,7 +17,7 @@ function DetailsSection({sectionName,inputList,handlePersonalInput}){
             <div className={`inputContainer ${isSectionOpen ? "open" : ""}`} id="inputDetails">
             {   
                 inputList.map(([label,placeholder,type],index) => (
-                    <InputField key={index} label={label} onChange={handlePersonalInput} placeholder={placeholder} type={type}/>
+                    <InputField key={index} label={label} onChange={handlePersonalInput} placeholder={placeholder} type={type} value={person[label]}/>
                 ))
             }
             </div>
